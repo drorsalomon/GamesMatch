@@ -17,8 +17,7 @@ process.on('uncaughtException', (err) => {
 dotenv.config({ path: './config.env' });
 
 // DB variable with connection string and password
-//const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
-const DB = process.env.DATABASE;
+const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
 
 /* Connect to the the database with mongoose. We pass out connection string and an object with
    some settings to avoid deprecation warnings. Then we connect with a promise through the 'then()' function. */
