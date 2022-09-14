@@ -4,6 +4,7 @@
   "description": "Video games database ",
   "main": "app.js",
   "scripts": {
+    "start": "node server.js",
     "dev": "nodemon server.js",
     "prod": "SET NODE_ENV=production & nodemon server.js",
     "test": "nodemon convert-json-data.js",
