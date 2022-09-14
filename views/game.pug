@@ -1,0 +1,135 @@
+extends base 
+
+block content
+    .game__container
+        .game__card.headline__card
+            .headline__card-img-container
+                if game.background_image
+                    img.headline__card-img(src=`${game.background_image}` alt=`${game.name}`) 
+                else
+                    img.game__card-img(src='/img/image-not-found.png' alt='Image not found')   
+            .headline__card__content
+                .headline__card-item.headline__card-title= game.name 
+                .headline__card__date__web-container
+                    if game.released_at
+                        .headline__card-item.headline__card-release= game.released_at
+                    else
+                        .headline__card-item.headline__card-release= 'Not Available'    
+                    .headline__card-item.headline__card-divider
+                    .headline__card-item.headline__card-website 
+                        a(href=`${game.website}` target="_blank") Visit Website
+                .headline__card__metacritic-container            
+                    .headline__card-item.headline__card-meta Metacritic
+                    .headline__card__score-cover
+                        if game.metacritic && game.metacritic <= 49 
+                            .headline__card-score.meta-score-low= `${game.metacritic}`
+                        else if game.metacritic && game.metacritic > 49 && game.metacritic <= 74
+                            .headline__card-score.meta-score-med= `${game.metacritic}`
+                        else if game.metacritic && game.metacritic > 74
+                            .headline__card-score.meta-score-high= `${game.metacritic}`
+                        else
+                            .headline__card-item.headline__card-score= 'Not Available'                    
+                .headline__card__genres-container
+                    if game.tags[0]
+                        .headline__card-item.headline__card-genre= game.tags[0] 
+                    .headline__card-item.headline__card-divider
+                    if game.tags[1]
+                        .headline__card-item.headline__card-genre= game.tags[1] 
+                    .headline__card-item.headline__card-divider
+                    if game.tags[2]
+                        .headline__card-item.headline__card-genre= game.tags[2] 
+                    .headline__card-item.headline__card-divider
+                    if game.tags[3]
+                        .headline__card-item.headline__card-genre= game.tags[3] 
+                .headline__card__platforms-container         
+                    if game.platforms
+                        each platform in game.platforms
+                            if platform && platform==='PlayStation' || platform==='PlayStation 2' || platform==='PlayStation 3' || platform==='PlayStation 4' || platform==='PlayStation 5' || platform==='PS Vita'|| platform==='PSP'
+                                .headline__card__platform-cover.platform-playstation
+                                    .headline__card-item.headline__card-platform= platform
+                            else if platform && platform==='Xbox' || platform==='Xbox 360' || platform==='Xbox One' || platform==='Xbox Series S/X'
+                                .headline__card__platform-cover.platform-xbox
+                                    .headline__card-item.headline__card-platform= platform
+                            else if platform && platform==='PC' || platform==='macOS' || platform==='Linux'
+                                .headline__card__platform-cover.platform-pc
+                                    .headline__card-item.headline__card-platform= platform
+                            else if platform && platform==='Android' || platform==='iOS'
+                                .headline__card__platform-cover.platform-android
+                                    .headline__card-item.headline__card-platform= platform
+                            else if platform && platform==='Nintendo Switch' || platform==='Dreamcast' || platform==='Game Boy Color' || platform==='Game Boy' || platform==='Nintendo 3DS' || platform==='Wii U' || platform==='Wii' || platform==='Game Boy Advance'
+                                .headline__card__platform-cover.platform-nintendo
+                                    .headline__card-item.headline__card-platform= platform
+                    else
+                        .headline__card__platform-cover
+                            .headline__card-item.headline__card-platform= 'Not Available'    
+        .detail__card__container    
+            .game__card.details__card__left
+                .details__card__left__developers__container 
+                    .details__card__left__developers__headline Developer
+                    if game.developers[0]
+                        .details__card__left__developers__developer= game.developers[0].name 
+                    else
+                        .details__card__left__developers__developer= 'Not Available'    
+                .details__card__left__publishers__container 
+                    .details__card__left__publishers__headline Publisher
+                    if game.publishers[0]
+                        .details__card__left__publishers__publisher= game.publishers[0].name
+                    else   
+                        .details__card__left__publishers__publisher= 'Not Available'
+            .game__card.details__card__right 
+                .details__card__right__esrb__container
+                    .details__card__right__esrb__headline ESRB Rating
+                    if game.esrb_rating 
+                        .details__card__right__esrb__rating= game.esrb_rating 
+                    else
+                        .details__card__right__esrb__rating= 'Not Available' 
+                .details__card__right__time__container 
+                    .details__card__right__time__headline How long to beat
+                    if game.playtime
+                        .details__card__right__time__number= `${game.playtime} Hours`
+                    else 
+                        .details__card__right__time__number= 'Not Available'         
+    
+
+        .game__card.description__card
+            .description__card__headline Description
+            if game.description 
+                .description__card__text= game.description 
+            else
+                .description__card__text= 'Not Available'
+
+
+        .game__card.images__card
+            .images__card__headline__container
+                .images__card__headline Images & Screenshots 
+            .images__card__img__container    
+                .images__card__big__img__container
+                    if game.images[0]       
+                        img.images__card__img-big(src=`${game.images[0]}` alt=`${game.name}`)
+                    else
+                        img.images__card__img-big(src='/img/image-not-found.png' alt='Image not found')     
+                .images__card__small__img__container
+                    if game.images[1]
+                        img.images__card__img-small(src=`${game.images[1]}` alt=`${game.name}`)
+                    else
+                        img.images__card__img-small(src='/img/image-not-found.png' alt='Image not found')    
+                    if game.images[2]
+                        img.images__card__img-small(src=`${game.images[2]}` alt=`${game.name}`)
+                    else
+                        img.images__card__img-small(src='/img/image-not-found.png' alt='Image not found')    
+                    if game.images[3]
+                        img.images__card__img-small(src=`${game.images[3]}` alt=`${game.name}`)
+                    else
+                        img.images__card__img-small(src='/img/image-not-found.png' alt='Image not found')    
+                    if game.images[4]
+                        img.images__card__img-small(src=`${game.images[4]}` alt=`${game.name}`)
+                    else
+                        img.images__card__img-small(src='/img/image-not-found.png' alt='Image not found')    
+                    if game.images[5]
+                        img.images__card__img-small(src=`${game.images[5]}` alt=`${game.name}`)
+                    else
+                        img.images__card__img-small(src='/img/image-not-found.png' alt='Image not found')    
+                    if game.images[6]
+                        img.images__card__img-small(src=`${game.images[6]}` alt=`${game.name}`)
+                    else
+                        img.images__card__img-small(src='/img/image-not-found.png' alt='Image not found') 

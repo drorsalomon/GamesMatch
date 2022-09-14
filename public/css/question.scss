@@ -1,0 +1,85 @@
+@import 'variables';
+@import 'mixin';
+
+.question__container {
+  @include container;
+}
+
+.question__content__container {
+  padding-top: 4rem;
+  color: $text-color-primary;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+.question__content-headline {
+  font-size: $h1;
+  color: $text-color-secondary;
+}
+
+.question__content-instructions,
+.question__options__statement {
+  padding: 4rem 0 4rem 0;
+  font-size: $h3;
+}
+
+.question__content__number__container {
+  background-color: $text-color-secondary;
+  padding: 1rem;
+  font-size: $h3;
+
+  border-radius: 10rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
+.question__content-number {
+  color: $text-color-tertiary;
+}
+
+.question__options__statement {
+  font-size: $h2;
+  text-decoration: underline;
+}
+
+.question__options__container {
+  margin-right: 4rem;
+  padding-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  font-size: $h4;
+}
+
+.question__submit__container {
+  padding: 5rem 0 10rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  button {
+    @include btn-fill;
+    text-transform: uppercase;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: $h3;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  button:hover {
+    -webkit-filter: brightness(95%);
+    filter: brightness(95%);
+  }
+}

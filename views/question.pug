@@ -1,0 +1,83 @@
+extends base
+
+block content
+    main.main
+        .question__container
+            .question__content__container
+                .question__content-headline Gamer Personality Survey
+                .question__content-instructions Please choose the option that indicates how much you agree or disagree with the statement
+                .question__content__number__container 
+                    if question.question_num < 10   
+                        .question__content-number= `0${question.question_num}`
+                    else   
+                        .question__content-number= question.question_num    
+                .question__options__statement= `"${question.question}"`
+            form.question__survey-form
+                .question__options__container
+                    if userAnswered === 1
+                        .question__options
+                            .question__options-label
+                                label() Disagree
+                            .question__options-label    
+                                input.userInput(type='radio', name='gamer-survey', value='1', checked)
+                    else
+                        .question__options
+                            .question__options-label
+                                label() Disagree
+                            .question__options-label    
+                                input.userInput(type='radio', name='gamer-survey', value='1')
+                    if userAnswered === 2                        
+                        .question__options
+                            .question__options-label
+                                label() Slightly disagree
+                            .question__options-label     
+                                input.userInput(type='radio', name='gamer-survey', value='2', checked)
+                    else
+                        .question__options
+                            .question__options-label
+                                label() Slightly disagree
+                            .question__options-label     
+                                input.userInput(type='radio', name='gamer-survey', value='2')  
+                    if userAnswered === 3                       
+                        .question__options
+                            .question__options-label
+                                label() Neutral
+                            .question__options-option    
+                                input.userInput(type='radio', name='gamer-survey', value='3', checked)
+                    else
+                        .question__options
+                            .question__options-label
+                                label() Neutral
+                            .question__options-option    
+                                input.userInput(type='radio', name='gamer-survey', value='3')   
+                    if userAnswered === 4                     
+                        .question__options
+                            .question__options-label
+                                label() Slightly agree
+                            .question__options-option    
+                                input.userInput(type='radio', name='gamer-survey', value='4', checked)
+                    else
+                        .question__options
+                            .question__options-label
+                                label() Slightly agree
+                            .question__options-option    
+                                input.userInput(type='radio', name='gamer-survey', value='4')
+                    if userAnswered === 5                 
+                        .question__options
+                            .question__options-label
+                                label() Agree
+                            .question__options-option    
+                                input.userInput(type='radio', name='gamer-survey', value='5', checked)
+                    else
+                        .question__options
+                            .question__options-label
+                                label() Agree
+                            .question__options-option    
+                                input.userInput(type='radio', name='gamer-survey', value='5')        
+                .question__submit__container  
+                    if question.question_num === 50      
+                        button.question__back back
+                        button.question__next Finish
+                    else    
+                        button.question__back back
+                        button.question__next Next

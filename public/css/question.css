@@ -1,0 +1,74 @@
+.question__container {
+  padding-top: 10rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 1rem;
+}
+
+.question__content__container {
+  padding-top: 4rem;
+  color: #525252;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+.question__content-headline {
+  font-size: 3rem;
+  color: #fab005;
+}
+
+.question__content-instructions,
+.question__options__statement {
+  padding: 4rem 0 4rem 0;
+  font-size: 1.7rem;
+}
+
+.question__content__number__container {
+  background-color: #fab005;
+  padding: 1rem;
+  font-size: 1.7rem;
+  border-radius: 10rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
+.question__content-number {
+  color: #fff;
+}
+
+.question__options__statement {
+  font-size: 2.2rem;
+  text-decoration: underline;
+}
+
+.question__options__container {
+  margin-right: 4rem;
+  padding-top: 4rem;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.3rem;
+}
+
+.question__submit__container {
+  padding: 5rem 0 10rem 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+.question__submit__container button {
+  color: #f9f9f9;
+  background-color: #fab005;
+  border-color: #fab005;
+  text-transform: uppercase;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-size: 1.7rem;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.question__submit__container button:hover {
+  filter: brightness(95%);
+}/*# sourceMappingURL=question.css.map */

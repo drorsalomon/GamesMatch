@@ -1,0 +1,88 @@
+.main__settings {
+  margin-bottom: -15rem;
+  background-color: #8e8e8e;
+  box-shadow: 0 0;
+}
+
+.account__container {
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.account__nav {
+  background: linear-gradient(to right bottom, #fab005, #fac64c);
+  width: 30rem;
+  border-radius: 1rem 0 0 1rem;
+  padding: 4rem 3rem;
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+.account__nav-link {
+  display: flex;
+  align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 3rem;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.account__nav-link svg {
+  margin-right: 2rem;
+  width: 3rem;
+  height: 3rem;
+}
+
+.account__nav-link:hover {
+  transform: translateY(-2px);
+}
+
+.account__form {
+  color: #fff !important;
+  background-color: #444;
+  width: 80rem;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.account__settings {
+  color: #fff;
+}
+
+.form__upload {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+}
+
+.account__img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 10rem;
+}
+
+.form-photo-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.upload__label {
+  margin-left: 1rem;
+  color: #fff;
+  border-bottom: 1px solid #fab005;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.upload__label:hover {
+  color: #fab005;
+}/*# sourceMappingURL=acount.css.map */

@@ -1,0 +1,41 @@
+extends base 
+
+block content
+
+    main.main
+        .headline GamesMatch
+        .subheadline Matching games and players the smart way.
+        .promo__container
+            .promo
+                .promo__headline Looking to get into video games but not really sure which game genre is right for you?
+                .promo__text Don't just wonder in the dark while wasting time and money on games that aren't the right fit for you. Let our smart system match games tailored to your personality characteristics by taking our quick survey.  
+                .promo__buttons 
+                    a.promo__btn-sign(href='/signup') Sign up
+                    a.promo__btn-survey(href='/survey') Take Survey
+                .buttons__text Sign up or take the survey if you already did    
+            svg
+                use(xlink:href='/img/gaming.svg#gaming')
+        
+        .steps__heading    
+            .steps__heading-headline how it works
+            .steps__heading-subheadline Get matched with games in 3 easy steps
+        .steps__container
+            .step 
+                .step__number 01
+                .step__headline Sign Up
+                .step__text Get your own personal profile where your matched games are saved.
+            svg
+                use(xlink:href='/img/signup.svg#signup')    
+        
+            svg
+                use(xlink:href='/img/survey.svg#survey')
+            .step 
+                .step__number 02
+                .step__headline Take the Survey
+                .step__text Answering the survey takes only 5-7 minutes and The results will help us with matching the best games based on your personality characteristics.
+            .step 
+                .step__number 03
+                .step__headline Get matched games
+                .step__text Our system will match the games best fitted for you based on your survey answers and game genres data points. 
+            svg
+                use(xlink:href='/img/games.svg#games') 

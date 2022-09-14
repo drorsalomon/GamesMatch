@@ -1,0 +1,114 @@
+@import 'variables';
+
+.main__settings {
+  margin-bottom: -15rem;
+  background-color: $bg-color-tertiary;
+  -webkit-box-shadow: 0 0;
+  box-shadow: 0 0;
+}
+
+.account__container {
+  padding: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.account__nav {
+  background: -webkit-gradient(linear, left top, right bottom, from($text-color-secondary), to($text-color-secondary-light));
+  background: -o-linear-gradient(left top, $text-color-secondary, $text-color-secondary-light);
+  background: linear-gradient(to right bottom, $text-color-secondary, $text-color-secondary-light);
+  width: 30rem;
+  border-radius: 1rem 0 0 1rem;
+  padding: 4rem 3rem;
+  color: $text-color-tertiary;
+  font-size: $h3;
+}
+
+.account__nav-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 3rem;
+  text-decoration: none;
+  color: $text-color-tertiary;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  svg {
+    margin-right: 2rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.account__nav-link:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+
+.account__form {
+  color: $text-color-tertiary !important;
+  background-color: $bg-color-primary;
+  width: 80rem;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.account__settings {
+  color: $text-color-tertiary;
+}
+
+.form__upload {
+  margin: 3rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: $h3;
+}
+
+.account__img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 10rem;
+}
+
+.form-photo-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.upload__label {
+  margin-left: 1rem;
+  color: $text-color-tertiary;
+  border-bottom: 1px solid $text-color-secondary;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.upload__label:hover {
+  color: $text-color-secondary;
+}

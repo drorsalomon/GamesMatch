@@ -1,0 +1,101 @@
+@import 'variables';
+@import 'mixin';
+
+.survey__container {
+  @include container;
+}
+
+.survey__content__container {
+  padding-top: 4rem;
+  color: $text-color-primary;
+  text-transform: uppercase;
+  width: 50rem;
+  margin: auto;
+}
+
+.survey__content-headline {
+  font-size: $h1;
+  color: $text-color-secondary;
+}
+
+.survey__content-instructions {
+  padding-top: 2rem;
+  font-size: $h3;
+}
+
+.survey__links__container {
+  padding: 5rem 0 5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+
+  a,
+  button {
+    text-decoration: none;
+    font-size: $h3;
+    border: 1px solid $text-color-secondary;
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  button {
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    letter-spacing: 0.1rem;
+    color: $text-color-secondary;
+    background-color: $bg-color-secondary;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+}
+
+.survey__links-back {
+  color: $text-color-secondary;
+  margin-left: 5rem;
+}
+
+.survey__links-back:hover,
+.take__survey--btn:hover {
+  @include btn-fill;
+}
+
+.survey__links-survey {
+  @include btn-fill;
+  margin-right: 5rem;
+}
+
+.survey__links-survey:hover {
+  color: $text-color-secondary;
+  background-color: $bg-color-secondary;
+}
+
+.traits__exp {
+  font-size: $h4;
+  text-transform: uppercase;
+  color: $bg-color-primary;
+}
+
+.trait__score-low {
+  font-size: $h4;
+  text-transform: uppercase;
+  color: $metacritic-low;
+}
+
+.trait__score-medium {
+  font-size: $h4;
+  text-transform: uppercase;
+  color: $metacritic-med;
+}
+
+.trait__score-high {
+  font-size: $h4;
+  text-transform: uppercase;
+  color: $metacritic-high;
+}

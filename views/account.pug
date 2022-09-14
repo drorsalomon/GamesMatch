@@ -1,0 +1,27 @@
+extends base
+
+block content
+    .main__settings
+        .account__container
+            .account__nav
+                if user.role === 'admin'
+                    include _adminNav
+                else if user.role === 'user' 
+                    include _userNav   
+
+            block account    
+                .account__form 
+                    .form__headline Account settings
+                    form.form.form--update__user__data
+                        .form__group    
+                            label.form-label.account__settings(for='name') Name
+                            input#name.form-input(type='text' value=`${user.name}`, required, name='name')
+                        .form__group    
+                            label.form-label.account__settings(for='email') Email
+                            input#email.form-input(type='email' value=`${user.email}`, required, name='email')
+                        .form__upload
+                            img.account__img(src=`/img/users/${user.photo}`, alt='User photo')
+                            label.form-label.upload__label(for='photo') Choose new photo    
+                            input.form-photo-input(type='file', accept='image/*', id='photo', value=`${user.photo}`, name='photo')
+                        .form__group    
+                            button.form__btn.update__settings__btn Save Settings      

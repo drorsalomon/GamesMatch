@@ -1,0 +1,313 @@
+@import 'variables';
+
+.game__container {
+  padding: 15rem;
+  padding-bottom: 5rem;
+  background-color: $bg-color-secondary;
+}
+
+.headline__card,
+.details__card__right,
+.details__card__left,
+.description__card,
+.images__card {
+  background-color: $bg-color-primary;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
+  justify-content: left;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.headline__card {
+  margin-top: -25rem;
+  margin-bottom: 5rem;
+}
+
+.detail__card__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.details__card__right,
+.details__card__left {
+  text-align: center;
+  display: block;
+  height: 20rem;
+  width: 57rem;
+}
+
+.description__card {
+  display: block;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 5rem;
+}
+
+.images__card {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+
+  img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 1rem;
+    -webkit-box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
+.headline__card-img-container {
+  margin-right: 3rem;
+}
+
+.headline__card-img {
+  width: 33rem;
+  height: 33rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.25);
+}
+
+.headline__card__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.headline__card-item {
+  color: $text-color-tertiary;
+}
+
+.headline__card-title {
+  font-size: $card-title;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+.headline__card__date__web-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.headline__card-item.headline__card-divider {
+  margin-left: 1rem;
+  height: 2.8rem;
+  background-color: $text-color-tertiary;
+  -ms-flex-item-align: stretch;
+  -ms-grid-row-align: stretch;
+  align-self: stretch;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 0.2rem;
+  flex: 0 0 0.2rem;
+}
+
+.headline__card-website {
+  margin-left: 1rem;
+  a {
+    color: $text-color-tertiary;
+    font-size: $h3;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $text-color-secondary;
+  }
+}
+
+.headline__card__metacritic-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.headline__card-meta {
+  font-size: $h3;
+}
+
+.headline__card__score-cover {
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0rem 0rem 2rem 1rem;
+}
+
+.meta-score-low {
+  background-color: $metacritic-low;
+}
+.meta-score-med {
+  background-color: $metacritic-med;
+}
+.meta-score-high {
+  background-color: $metacritic-high;
+}
+
+.headline__card-score {
+  font-size: $h4;
+  padding: 0.8rem;
+  border-radius: 1rem;
+}
+
+.headline__card-release,
+.headline__card-meta,
+.headline__card-platforms,
+.headline__card-genre {
+  font-size: $h3;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.headline__card__platforms-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.headline__card__platform-cover {
+  padding: 0.8rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+  background-color: $text-color-secondary;
+}
+
+.headline__card-item.headline__card-platform {
+  font-size: $h5;
+}
+
+.platform-pc {
+  background-color: $pc-mac;
+}
+
+.platform-playstation {
+  background-color: $playstation;
+}
+
+.platform-xbox {
+  background-color: $xbox;
+}
+
+.platform-nintendo {
+  background-color: $nintendo;
+}
+
+.platform-android {
+  background-color: $android-ios;
+}
+
+.headline__card__genres-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80rem;
+}
+
+.headline__card-item.headline__card-genre {
+  margin-left: 1rem;
+}
+
+.headline__card-item.headline__card-genre:first-child {
+  margin: 0;
+}
+
+.details__card__left__developers__headline,
+.details__card__left__publishers__headline,
+.details__card__right__esrb__headline,
+.details__card__right__time__headline {
+  font-size: $h2;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $text-color-tertiary;
+}
+
+.details__card__left__developers__developer,
+.details__card__left__publishers__publisher,
+.details__card__right__esrb__rating,
+.details__card__right__time__number {
+  font-size: $h3;
+  color: $text-color-tertiary;
+}
+
+.details__card__left__developers__developer,
+.details__card__right__esrb__rating {
+  margin-bottom: 2rem;
+}
+
+.description__card__headline,
+.images__card__headline {
+  font-size: $h1;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $text-color-tertiary;
+}
+
+.description__card__text {
+  margin-top: 2rem;
+  font-size: $h3;
+  color: $text-color-tertiary;
+  letter-spacing: 0.1rem;
+}
+
+.images__card__headline {
+  margin-bottom: 2rem;
+}
+
+.images__card__img__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.images__card__small__img__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 17rem 1.5rem 17rem 1.5rem 17rem;
+  grid-template-columns: 17rem 17rem 17rem;
+  gap: 1.5rem;
+  margin-left: 5rem;
+}
+
+.images__card__img-big {
+  width: 45rem;
+  height: 36rem;
+}
+.images__card__img-small {
+  width: 17rem;
+  height: 17rem;
+}

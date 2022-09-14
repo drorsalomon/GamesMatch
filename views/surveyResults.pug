@@ -1,0 +1,38 @@
+extends base
+
+block content
+    main.main
+        .search__container
+            svg
+                use(xlink:href='/img/gameResults.svg#gameResults')                 
+                .search__headline Your survey trait results
+                each trait in traitsArray        
+                    .trait__container
+                        if trait.score < 20        
+                            .traits__exp= `Your ${trait.trait} score is`
+                            .trait__separator &nbsp; 
+                            .trait__value= trait.score
+                            .trait__separator &nbsp; 
+                            .traits__exp= 'which is considered to be'
+                            .trait__separator &nbsp; 
+                            .trait__score-low low
+                        if trait.score >= 20 && trait.score < 30
+                            .traits__exp= `Your ${trait.trait} score is`
+                            .trait__separator &nbsp; 
+                            .trait__value= trait.score
+                            .trait__separator &nbsp; 
+                            .traits__exp= 'which is considered to be'
+                            .trait__separator &nbsp; 
+                            .trait__score-medium medium
+                        if trait.score > 30     
+                            .traits__exp= `Your ${trait.trait} score is`
+                            .trait__separator &nbsp; 
+                            .trait__value= trait.score
+                            .trait__separator &nbsp; 
+                            .traits__exp= 'which is considered to be'
+                            .trait__separator &nbsp; 
+                            .trait__score-high high
+            .search__headline Your recommended games
+        include _results
+                                
+

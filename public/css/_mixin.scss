@@ -1,0 +1,14 @@
+@import 'variables';
+
+@mixin btn-fill {
+  color: $bg-color-secondary;
+  background-color: $text-color-secondary;
+  border-color: $text-color-secondary;
+}
+
+@mixin container {
+  padding-top: 10rem;
+  text-align: center;
+  background-color: $bg-color-secondary;
+  border-radius: 1rem;
+}

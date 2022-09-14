@@ -1,0 +1,454 @@
+@import 'variables';
+@import 'mixin';
+
+.search__container {
+  @include container;
+}
+
+.search__headline {
+  padding: 4rem 0 2rem 0;
+  font-size: $h1;
+  color: $text-color-secondary;
+  text-transform: uppercase;
+}
+
+.game__search-form {
+  padding-bottom: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.game__search-input {
+  width: 76rem;
+  padding: 0.7rem;
+  font-size: $h3;
+  background-color: $bg-color-secondary;
+  border: 1px solid $text-color-primary;
+}
+
+.game__search-btn {
+  width: 6rem;
+  padding: 0.6rem;
+  font-size: $h5;
+  background-color: $text-color-primary;
+  border-left: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+
+  svg {
+    width: 2.6rem;
+    height: 2.6rem;
+    fill: $text-color-secondary;
+  }
+}
+
+.search__button:hover {
+  -webkit-filter: brightness(115%);
+  filter: brightness(115%);
+}
+
+.results__container {
+  max-width: 104rem;
+  margin: 0 auto;
+  padding-bottom: 10rem;
+  background-color: $bg-color-secondary;
+}
+
+.game__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+  padding: 1rem;
+  color: $text-color-tertiary;
+  background-color: $bg-color-primary;
+  border: 1px solid $bg-color-primary;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.25);
+}
+
+.game__card-img {
+  padding: 1rem;
+  width: 25rem;
+  height: 30.5rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+.game__card__content__container {
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 65rem 12rem;
+  grid-template-columns: 65rem 12rem;
+}
+
+.game__card-title {
+  font-size: $h2;
+  font-weight: 700;
+}
+
+.game__card-summary {
+  font-size: $h4;
+  height: 22rem;
+}
+
+.game__card__right {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 2rem;
+}
+
+.metacritic__container,
+.developer__container,
+.publisher__container {
+  font-size: $h5;
+  width: 10rem;
+  padding: 1rem;
+  background-color: $text-color-secondary;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.developer__container,
+.publisher__container {
+  background-color: $bg-color-primary;
+  color: $text-color-secondary;
+  border: 1px solid $text-color-secondary;
+  border-radius: 1rem;
+}
+
+.metacritic__container {
+  font-weight: 700;
+  height: 5.5rem;
+}
+
+.developer__container {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.publisher__container {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 1rem;
+}
+
+.game__card__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
+  justify-content: left;
+  height: 2.5rem;
+  font-size: $h6;
+  text-transform: uppercase;
+}
+
+.platform__container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.3rem;
+  margin: 0.5rem 0 0.8rem 0.8rem;
+  background-color: $text-color-secondary;
+  text-align: center;
+  border-radius: 0.3rem;
+}
+
+.platform__container:first-child {
+  margin-left: 0;
+}
+
+.game__card__bottom-right {
+  padding-left: 2rem;
+}
+
+.game__card-details {
+  text-align: center;
+  a {
+    font-size: $h5;
+    font-weight: 600;
+    padding: 1.4rem;
+    color: $text-color-tertiary;
+    background-color: $text-color-secondary;
+    border: 1px solid $text-color-secondary;
+    border-radius: 1rem;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+
+  a:hover {
+    -webkit-filter: brightness(90%);
+    filter: brightness(90%);
+  }
+}
+
+.no__results {
+  color: $text-color-secondary;
+  font-size: $h1;
+  text-align: center;
+}
+
+.search__btn__txt__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search__txt__container,
+.rec__txt__container {
+  font-size: $h3;
+  font-weight: 300;
+  color: $text-color-secondary;
+}
+
+.search__options__container,
+.rec__options__container {
+  display: block;
+}
+
+.search__options__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 16rem;
+  height: 5rem;
+  background-color: $bg-color-secondary;
+  color: $text-color-secondary;
+  border: 2px solid $text-color-secondary;
+  border-radius: 10rem;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  font-size: $h3;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.search__options__icon {
+  width: 3rem;
+  height: 3rem;
+  color: $text-color-secondary;
+}
+
+.dropdown__content__options,
+.dropdown__content {
+  width: 30rem;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+
+  button {
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: left;
+    font-size: $h3;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    color: $text-color-secondary;
+    background-color: $bg-color-secondary;
+    border: none;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    border-radius: 1rem;
+  }
+
+  button:hover {
+    background-color: $selected-color;
+  }
+}
+
+.dd__btn:focus {
+  border: 2px solid $text-color-secondary;
+  background-color: $selected-color;
+}
+
+.button__content__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.search__sort__icon,
+.search__limit__icon,
+.search__filter__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.pagination__Container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+
+  button {
+    margin-right: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: $h3;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    border: none;
+    border-radius: 10rem;
+    color: $text-color-secondary;
+    background-color: $bg-color-secondary;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+
+  button:hover {
+    background-color: $bg-color-secondary;
+    -webkit-filter: brightness(90%);
+    filter: brightness(90%);
+  }
+}
+
+.pages__container,
+.pagination__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.pagination__icon {
+  width: 3rem;
+  height: 3rem;
+  color: $text-color-secondary;
+}
+
+.pagination__separator {
+  color: $text-color-secondary;
+  font-size: $h3;
+  margin-right: 1rem;
+}
+
+.not-allowed {
+  cursor: not-allowed !important;
+}
+
+.not-allowed:hover {
+  background-color: transparent !important;
+  -webkit-filter: brightness(100%) !important;
+  filter: brightness(100%) !important;
+}
+
+.search__options__btn-rec {
+  margin-bottom: 2rem;
+  width: 14rem;
+  height: 4rem;
+  background-color: $bg-color-primary;
+}
+
+.dropdown__content__options-rec,
+.dropdown__content-rec {
+  margin-bottom: 2rem;
+  button {
+    background-color: $bg-color-primary;
+    font-size: $h4;
+  }
+}
+
+.no__results-rec__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  a {
+    padding: 1rem;
+    text-decoration: none;
+    font-size: $h2;
+    color: $text-color-secondary;
+    border: 1px solid $text-color-secondary;
+    border-radius: 10rem;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  a:hover {
+    -webkit-filter: brightness(110%);
+    filter: brightness(110%);
+  }
+}
+
+.no__results-rec {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 50rem;
+  font-size: $h3;
+}
+
+.pagination__container-rec {
+  margin-bottom: 2rem;
+  button {
+    background-color: $bg-color-primary;
+  }
+}

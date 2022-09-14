@@ -1,0 +1,95 @@
+.survey__container {
+  padding-top: 10rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 1rem;
+}
+
+.survey__content__container {
+  padding-top: 4rem;
+  color: #525252;
+  text-transform: uppercase;
+  width: 50rem;
+  margin: auto;
+}
+
+.survey__content-headline {
+  font-size: 3rem;
+  color: #fab005;
+}
+
+.survey__content-instructions {
+  padding-top: 2rem;
+  font-size: 1.7rem;
+}
+
+.survey__links__container {
+  padding: 5rem 0 5rem 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+.survey__links__container a,
+.survey__links__container button {
+  text-decoration: none;
+  font-size: 1.7rem;
+  border: 1px solid #fab005;
+  padding: 1rem 2rem;
+  border-radius: 10rem;
+  transition: all 0.3s;
+}
+.survey__links__container button {
+  font-family: "Kdam Thmor Pro", sans-serif;
+  letter-spacing: 0.1rem;
+  color: #fab005;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.survey__links-back {
+  color: #fab005;
+  margin-left: 5rem;
+}
+
+.survey__links-back:hover,
+.take__survey--btn:hover {
+  color: #f9f9f9;
+  background-color: #fab005;
+  border-color: #fab005;
+}
+
+.survey__links-survey {
+  color: #f9f9f9;
+  background-color: #fab005;
+  border-color: #fab005;
+  margin-right: 5rem;
+}
+
+.survey__links-survey:hover {
+  color: #fab005;
+  background-color: #f9f9f9;
+}
+
+.traits__exp {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #444;
+}
+
+.trait__score-low {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #d9534f;
+}
+
+.trait__score-medium {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #fab005;
+}
+
+.trait__score-high {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #66cc33;
+}/*# sourceMappingURL=survey.css.map */

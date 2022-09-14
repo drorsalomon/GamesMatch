@@ -1,0 +1,23 @@
+extends base
+
+block content
+    main.main
+        .form__container
+            svg
+                use(xlink:href='/img/signup1.svg#signup1')                 
+            .form__headline Create your account
+            form.form.form--signup
+                .form__group
+                    label.form-label(for='name') Name
+                    input#name.form-input(type='text' placeholder='Enter name' name='name', required)
+                .form__group    
+                    label.form-label(for='email') Email
+                    input#email.form-input(type='email' placeholder='you@email.com' name='email', required)
+                .form__group    
+                    label.form-label(for='password') Password
+                    input#password.form-input(type='password' placeholder='••••••••' name='password', required, minlength='8')
+                .form__group    
+                    label.form-label(for='passwordConfirm') Confirm Password
+                    input#passwordConfirm.form-input(type='password' placeholder='••••••••' name='passwordConfirm', required, minlength='8')
+                .form__group    
+                    button.form__btn Create Account                 

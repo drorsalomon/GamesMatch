@@ -1,0 +1,162 @@
+if games.length > 1
+    .rec__btn__txt__container
+        .rec__txt__container
+                .total__results= `${totalGames} Games` 
+        .rec__options__container           
+            button.search__options__btn.search__options__btn-rec Options&nbsp; 
+                svg.search__options__icon(xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2")
+                    path(stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4")
+            #searchOptions.dropdown__content__options.dropdown__content__options-rec
+                button.sort__dropdown__btn.dd__btn 
+                    .button__content__container
+                        .dd__btn__text Sort By
+                        svg.search__sort__icon(xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2")
+                            path.search__sort__path(stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7")
+                #sortDropdown.dropdown__content.dropdown__content-rec
+                    button.sort__btn(data-sort='name' data-type=1) Name (A - Z)        
+                    button.sort__btn(data-sort='name' data-type=-1) Name (Z - A)
+                    button.sort__btn(data-sort='metacritic' data-type=-1) Metacritic (High - Low)
+                    button.sort__btn(data-sort='metacritic' data-type=1) Metacritic (Low - High)
+                    button.sort__btn(data-sort='released_at' data-type=-1) Release Date (New - Old)
+                    button.sort__btn(data-sort='released_at' data-type=1) Release Date (Old - New)    
+                button.limit__dropdown__btn.dd__btn 
+                    .button__content__container
+                        .dd__btn__text Results Per Page 
+                        svg.search__limit__icon(xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2")
+                            path.search__limit__path(stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7")
+                #limitDropdown.dropdown__content.dropdown__content-rec
+                    button.limit__btn(data-limit=10) 10       
+                    button.limit__btn(data-limit=25) 25
+                    button.limit__btn(data-limit=50) 50
+                    button.limit__btn(data-limit=100) 100  
+                button.filter__dropdown__btn.dd__btn 
+                            .button__content__container
+                                .dd__btn__text Filter By Platform
+                                svg.search__filter__icon(xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2")
+                                    path.search__filter__path(stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7")
+                #filterDropdown.dropdown__content
+                    button.filter__btn(data-filter='playstation') PlayStation      
+                    button.filter__btn(data-filter='xbox') Xbox
+                    button.filter__btn(data-filter='nintendo') Nintendo
+                    button.filter__btn(data-filter='pc') PC             
+                    button.filter__btn(data-filter='android') Android             
+                    button.filter__btn(data-filter='ios') iOS   
+    .rec__games__container                             
+        each game in games
+                .game__card-rec 
+                    .game__card-img-container
+                        img.game__card-img-rec(src=`${game.background_image}` alt=`${game.name}`)   
+                    .game__card__content__container-rec 
+                        .game__card__center
+                            .game__card-title-rec= game.name
+                            .game__card-summary-rec= game.description
+                        .game__card__right-rec
+                            if game.metacritic && game.metacritic <= 49 
+                                .metacritic__container-rec.meta-score-low
+                                    .game_card_metacritic Metacritic
+                                    .game__card-score= game.metacritic
+                            else if game.metacritic && game.metacritic > 49 && game.metacritic <= 74
+                                .metacritic__container-rec.meta-score-med
+                                    .game_card_metacritic Metacritic
+                                    .game__card-score= game.metacritic
+                            else if game.metacritic && game.metacritic > 74 
+                                .metacritic__container-rec.meta-score-high
+                                    .game_card_metacritic Metacritic
+                                    .game__card-score= game.metacritic                
+                            else
+                                .metacritic__container-rec
+                                    .game_card_metacritic Metacritic
+                                    .game__card-score= '-'    
+                            .developer__container-rec 
+                                if game.developers[0]  
+                                    .game__card-developer= game.developers[0].name  
+                                else
+                                    .game__card-developer= '-'                      
+                            .publisher__container-rec   
+                                if game.publishers[0]  
+                                    .game__card-publisher= game.publishers[0].name  
+                                else
+                                    .game__card-publisher= '-'                                          
+                        .game__card__bottom-rec 
+                            each platform in game.platforms
+                                    if platform && platform==='PlayStation' || platform==='PlayStation 2' || platform==='PlayStation 3' || platform==='PlayStation 4' || platform==='PlayStation 5' || platform==='PS Vita'|| platform==='PSP'
+                                        .platform__container.platform-playstation
+                                            .game__card-platform= platform
+                                    else if platform && platform==='Xbox' || platform==='Xbox 360' || platform==='Xbox One' || platform==='Xbox Series S/X'
+                                        .platform__container.platform-xbox
+                                            .game__card-platform= platform
+                                    else if platform && platform==='PC' || platform==='macOS' || platform==='Linux'
+                                        .platform__container.platform-pc
+                                            .game__card-platform= platform
+                                    else if platform && platform==='Android' || platform==='iOS'
+                                        .platform__container.platform-android
+                                            .game__card-platform= platform
+                                    else if platform && platform==='Nintendo Switch' || platform==='Dreamcast' || platform==='Game Boy Color' || platform==='Game Boy' || platform==='Nintendo 3DS' || platform==='Wii U' || platform==='Wii' || platform==='Game Boy Advance'
+                                        .platform__container.platform-nintendo
+                                            .game__card-platform= platform                                
+                        .game__card__bottom-right-rec  
+                            .game__card-details-rec   
+                                    a(href=`/games/${game.slug}`) Game Page  
+    if totalPages.length > 1                        
+        .pagination__Container.pagination__container-rec
+            if totalPages.length >= 5 && pageNumber < 3
+                .icon__container
+                    button.pagination__btn
+                        svg.pagination__icon(xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2")
+                            path(stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7")
+                .pages__container
+                    button.pagination__page(data-page=`${totalPages[0]}`)= totalPages[0] 
+                    button.pagination__page(data-page=`${totalPages[1]}`)= totalPages[1] 
+                    button.pagination__page(data-page=`${totalPages[2]}`)= totalPages[2] 
+                    .pagination__separator ...&nbsp; 
+                    button.pagination__page(data-page=`${totalPages[totalPages.length - 1]}`)= totalPages[totalPages.length - 1] 
+                .icon__container 
+                    button.pagination__btn(data-lastPage=`${totalPages[totalPages.length - 1]}`) 
+                        svg.pagination__icon(xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2")
+                            path(stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7")    
+            else if totalPages.length >= 5 && pageNumber >= 3 && pageNumber < totalPages[totalPages.length - 4]
+                .icon__container
+                    button.pagination__btn
+                        svg.pagination__icon(xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2")
+                            path(stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7")
+                .pages__container
+                    button.pagination__page(data-page=`${totalPages[pageNumber - 2]}`)= totalPages[pageNumber - 2] 
+                    button.pagination__page(data-page=`${totalPages[pageNumber - 1]}`)= totalPages[pageNumber - 1] 
+                    button.pagination__page(data-page=`${totalPages[pageNumber]}`)= totalPages[pageNumber] 
+                    .pagination__separator ...&nbsp; 
+                    button.pagination__page(data-page=`${totalPages[totalPages.length - 1]}`)= totalPages[totalPages.length - 1] 
+                .icon__container 
+                    button.pagination__btn(data-lastPage=`${totalPages[totalPages.length - 1]}`) 
+                        svg.pagination__icon(xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2")
+                            path(stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7")          
+            else if totalPages.length >= 5 && pageNumber >= totalPages[totalPages.length - 4]  
+                .icon__container
+                    button.pagination__btn
+                        svg.pagination__icon(xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2")
+                            path(stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7")
+                .pages__container            
+                    button.pagination__page(data-page=`${totalPages[totalPages.length - 5]}`)= totalPages[totalPages.length - 5] 
+                    button.pagination__page(data-page=`${totalPages[totalPages.length - 4]}`)= totalPages[totalPages.length - 4] 
+                    button.pagination__page(data-page=`${totalPages[totalPages.length - 3]}`)= totalPages[totalPages.length - 3] 
+                    button.pagination__page(data-page=`${totalPages[totalPages.length - 2]}`)= totalPages[totalPages.length - 2] 
+                    button.pagination__page(data-page=`${totalPages[totalPages.length - 1]}`)= totalPages[totalPages.length - 1] 
+                .icon__container 
+                    button.pagination__btn(data-lastpage=`${totalPages[totalPages.length - 1]}`) 
+                        svg.pagination__icon(xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2")
+                            path(stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7")         
+            else   
+                .icon__container
+                    button.pagination__btn
+                        svg.pagination__icon(xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2")
+                            path(stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7") 
+                .pages__container            
+                    each page in totalPages
+                        button.pagination__page(data-page=`${page}`)= page 
+                .icon__container 
+                    button.pagination__btn(data-lastpage=`${totalPages[totalPages.length - 1]}`) 
+                        svg.pagination__icon(xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2")
+                            path(stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7")
+else 
+    .no__results-rec__container
+        .no__results-rec You don't have any recommended games yet. Take the survey and we'll find the games best fitted for you!
+        a(href='/survey') Take Survey                                                                    

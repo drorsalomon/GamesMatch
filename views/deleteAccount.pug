@@ -1,0 +1,10 @@
+extends account
+
+block account
+    .account__form         
+        .form__headline We hate to see you leave 😞
+        .form__sub__headline Are you sure that you want to delete your account?
+        include _alert
+        form.form.form--delete__account
+            .form__group    
+                button.form__btn.delete__account__btn Delete My Account           

@@ -1,0 +1,26 @@
+extends base
+
+block content
+    main.main
+        .form__container
+            svg
+                use(xlink:href='/img/signup1.svg#signup1')                 
+            .form__headline Login to your account
+            form.form.form--login
+                .form__group    
+                    label.form-label(for='email') Email
+                    input#email.form-input(type='email' placeholder='you@email.com' name='email', required)
+                .form__group    
+                    label.form-label(for='password') Password
+                    input#password.form-input(type='password' placeholder='••••••••' name='password', required, minlength='8')    
+                .form__group    
+                    button.form__btn Login 
+                
+            .links__container
+                .link__group
+                    .link-label Can't recall your password?    
+                    a(href='/forgotPassword') Forgot Password
+                .link__group
+                    .link-label Don't have an account yet?      
+                    a(href='/signup') Sign Up
+            

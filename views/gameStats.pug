@@ -1,0 +1,22 @@
+extends account
+
+block account
+    .account__form
+        .form__headline Games Stats
+            .stats__headline__container
+                .stats__traits__headline Number of games with each trait
+            .stats__traits__container
+                each trait in traitsArray        
+                    .trait__container
+                        .trait__name=`${trait._id}: ` 
+                        .trait__separator &nbsp; 
+                        .trait__value= trait.numOfGamesWithTrait
+            .stats__headline__container            
+                .stats__traits__headline Number of games in each combo of traits
+            .stats__traits__container
+                each trait in traitsComboArray        
+                    .trait__container
+                        .trait__name=`${trait._id}: `
+                        .trait__separator &nbsp; 
+                        .trait__value= trait.numOfGamesWithTrait
+

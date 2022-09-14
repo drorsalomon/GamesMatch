@@ -1,0 +1,150 @@
+@import 'variables';
+
+.rec__btn__txt__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.rec__games__container {
+  max-width: 75rem;
+  margin: 0 auto;
+  background-color: $bg-color-primary;
+}
+
+.game__card-rec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+  padding: 1rem;
+  color: $bg-color-primary;
+  background-color: $bg-color-secondary;
+  border-radius: 1rem;
+}
+
+.game__card-img-rec {
+  padding: 1rem;
+  width: 15rem;
+  height: 32.5rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+.game__card__content__container-rec {
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 48rem 10rem;
+  grid-template-columns: 48rem 10rem;
+  text-align: left;
+}
+
+.game__card-title-rec {
+  font-size: $h3;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+
+.game__card-summary-rec {
+  font-size: $h5;
+  height: 24rem;
+}
+
+.game__card__right-rec {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: middle;
+  -ms-flex-align: middle;
+  align-items: middle;
+  padding-left: 1rem;
+}
+
+.metacritic__container-rec,
+.developer__container-rec,
+.publisher__container-rec {
+  font-size: $h6;
+  width: 8.5rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.developer__container-rec,
+.publisher__container-rec {
+  background-color: $bg-color-primary;
+  color: $text-color-secondary;
+  border: 1px solid $text-color-secondary;
+  border-radius: 1rem;
+}
+
+.metacritic__container-rec {
+  font-weight: 700;
+  height: 5rem;
+}
+
+.developer__container-rec {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.publisher__container-rec {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 1rem;
+}
+
+.game__card__bottom-right-rec {
+  padding-left: 1rem;
+}
+
+.game__card-details-rec {
+  text-align: center;
+  a {
+    font-size: $h6;
+    font-weight: 600;
+    padding: 1.4rem;
+    color: $bg-color-primary;
+    background-color: $text-color-secondary;
+    border-radius: 1rem;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+
+  a:hover {
+    -webkit-filter: brightness(90%);
+    filter: brightness(90%);
+  }
+}
+
+.game__card__bottom-rec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
+  justify-content: left;
+  height: 2rem;
+  color: $bg-color-secondary;
+  font-size: $h7;
+  text-transform: uppercase;
+}

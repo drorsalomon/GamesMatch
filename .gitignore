@@ -1,0 +1,8 @@
+node_modules
+.cache
+.vscode
+dev-data
+ToDo.txt
+*.env
+.eslintrc.json
+.prettierrc

@@ -1,0 +1,14 @@
+extends base
+
+block content
+    main.main
+        .search__container
+            svg
+                use(xlink:href='/img/search.svg#search')                 
+            .search__headline Games free search
+            form.game__search-form
+                input#userInput.game__search-input(type='text' placeholder='Enter name of game...' name='query', required, minlength='1')
+                button.game__search-btn 
+                    svg
+                        use(xlink:href='/img/icons.svg#icon-search')    
+        include _results

@@ -1,0 +1,13 @@
+extends base
+
+block content
+    main.main
+        .survey__container
+            svg
+                use(xlink:href='/img/survey1.svg#survey1')
+            .survey__content__container
+                .survey__content-headline Gamer Personality Survey
+                .survey__content-instructions The survey consists of 50 questions and takes about 5 to 10 minutes to complete. <br/> After completion our system will recommend specific games that might correlate to your personality profile.
+            .survey__links__container
+                a.survey__links-back(href='/') Go Back    
+                button.take__survey--btn Start Survey
