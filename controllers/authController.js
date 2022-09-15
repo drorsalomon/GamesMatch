@@ -14,23 +14,19 @@ const signToken = (id) =>
   });
 
 // Function for creating the JWT and sending it to the user in the response
-const createSendToken = (user, statusCode, res) => {
+const createSendToken = (user, statusCode, req, res) => {
   // Create the token for the user with the sent user._id
   const token = signToken(user._id);
 
-  const cookieOptions = {
+  // Create and send a cookie with the token and the specified options (expires, httpOnly, secure)
+  res.cookie('jwt', token, {
     // expiration date of 90 days converted to milliseconds
     expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000),
-    // Use only https secured connection (when set to true)
-    secure: false,
     // Prevent from the browser to access the cookie, the browser will only receive, store and send the cookie with requests
     httpOnly: true,
-  };
-
-  if (process.env.NODE_ENV === 'production') cookieOptions.secure = true; // In development we don't want it set to true.
-
-  // Create and send a cookie with the specified options
-  res.cookie('jwt', token, cookieOptions);
+    // if we're on a secure connection and the header is set to https (this is an heroku requirement), secure the cookie
+    secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
+  });
 
   user.password = undefined; // Remove the password from the response output.
 
@@ -63,7 +59,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 
   await new Email(newUser, url).sendWelcome();
 
-  createSendToken(newUser, 201, res);
+  createSendToken(newUser, 201, req, res);
 });
 
 exports.login = catchAsync(async (req, res, next) => {
@@ -83,7 +79,7 @@ exports.login = catchAsync(async (req, res, next) => {
     return next(new AppError('Incorrect email or password!', 401));
   }
   // Send token
-  createSendToken(user, 200, res);
+  createSendToken(user, 200, req, res);
 });
 
 /* This logout function will simply create a cookie with the same name as the login cookie by without the 
@@ -197,7 +193,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 
   // Update changedPasswordAt property for the user -> done using the pre save middleware in the user model.
   // Log the user in, send JWT
-  createSendToken(user, 200, res);
+  createSendToken(user, 200, req, res);
 });
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
@@ -215,7 +211,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   await user.save();
 
   // Log the user in, send JWT
-  createSendToken(user, 200, res);
+  createSendToken(user, 200, req, res);
 });
 
 /* This middleware is used to determine if the user is logged in or not for rendered pages. It is very similar to the 
