@@ -26,7 +26,6 @@ module.exports = class Email {
       });
     }
     // If in development use nodemailer.
-
     /* Function for creating and sending emails to the users. We create the options variable and specify
    the email address, email content etc. The transporter is just a service for sending the email like
     gmail for example (for using Gmail we need to activate an option called 'less secure app' in our
@@ -51,7 +50,6 @@ module.exports = class Email {
       url: this.url,
       mailText,
     });
-
     // 2) Define the email options.
 
     /* We define the email options using strings and information from the 'options' function argument.

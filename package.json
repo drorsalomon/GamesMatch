@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "prod": "SET NODE_ENV=production & nodemon server.js",
     "test": "nodemon convert-json-data.js",
     "debug": "ndb server.js",
     "watch:js": "parcel watch --no-hmr ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
