@@ -44,3 +44,13 @@ process.on('unhandledRejection', (err) => {
     process.exit(1);
   });
 });
+
+// We receive sigterm signals from heroku every 24h and in the case that we do we want to gracefully shut the server down.
+// The signal shuts the app down automatically, and by using server.close we let the requests that are still being processed
+// to finish.
+process.on('SIGTERM', () => {
+  console.log('SIGTERM received shutting down... 😴');
+  server.close(() => {
+    console.log('PROCESS TERMINATED! ☠️');
+  });
+});

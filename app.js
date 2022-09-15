@@ -21,6 +21,7 @@ const surveyRouter = require('./routes/surveyRoutes');
 // Start express app
 const app = express();
 
+// trust proxy like heroku (acts as a proxy for our app)
 app.enable('trust proxy');
 
 app.set('view engine', 'pug');
