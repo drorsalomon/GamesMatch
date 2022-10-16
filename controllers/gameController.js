@@ -112,8 +112,6 @@ exports.getRecGames = catchAsync(async (req, res, next) => {
 
   const traitsArray = user.traits;
 
-  console.log(totalGamesArray.length);
-
   const games = await Game.find({ _id: { $in: user.recommendedGames }, platforms: { $regex: filter, $options: 'i' } })
     .sort({ [sort]: type })
     .skip(pageNumber > 0 ? (pageNumber - 1) * resPerPage : 0)
@@ -126,7 +124,11 @@ exports.getRecGames = catchAsync(async (req, res, next) => {
   // If there's no filter (platforms) use the user.recommendedGames array otherwise use the array from find()
   const totalPages = populatePagesArray(totalGamesArray);
 
-  console.log(games.length);
+  console.log('total games length: ' + totalGamesArray.length);
+  console.log(type);
+  console.log(pageNumber);
+  console.log(resPerPage);
+  console.log('games: ' + games.length);
 
   // Render wanted page according to the origin variable
   if (origin === 'account') {
