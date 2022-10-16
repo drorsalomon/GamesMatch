@@ -78,8 +78,6 @@ exports.getSearchResults = catchAsync(async (req, res, next) => {
   // Get total number of pages for pagination
   const totalPages = populatePagesArray(totalGamesArray);
 
-  console.log(games.length);
-
   res.status(200).render('search', {
     title: 'search results',
     games,
@@ -123,11 +121,6 @@ exports.getRecGames = catchAsync(async (req, res, next) => {
 
   // If there's no filter (platforms) use the user.recommendedGames array otherwise use the array from find()
   const totalPages = populatePagesArray(totalGamesArray);
-
-  console.log(user.recommendedGames);
-  console.log('filter is: ' + filter);
-  console.log('total games length: ' + totalGamesArray.length);
-  console.log('games: ' + games.length);
 
   // Render wanted page according to the origin variable
   if (origin === 'account') {
