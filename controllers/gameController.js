@@ -108,6 +108,8 @@ exports.getRecGames = catchAsync(async (req, res, next) => {
 
   const user = await User.findById(req.user.id);
 
+  console.log(user);
+
   const traitsArray = user.traits;
 
   const games = await Game.find({ _id: { $in: user.recommendedGames }, platforms: { $regex: filter, $options: 'i' } })
