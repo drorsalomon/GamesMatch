@@ -110,6 +110,8 @@ exports.getRecGames = catchAsync(async (req, res, next) => {
 
   const traitsArray = user.traits;
 
+  console.log(filter);
+
   const games = await Game.find({ _id: { $in: user.recommendedGames }, platforms: { $regex: filter, $options: 'i' } })
     .sort({ [sort]: type })
     .skip(pageNumber > 0 ? (pageNumber - 1) * resPerPage : 0)
@@ -128,9 +130,7 @@ exports.getRecGames = catchAsync(async (req, res, next) => {
     totalGames = games.length;
   }
 
-  setTimeout(() => {
-    console.log(games);
-  }, 2000);
+  console.log(games.length);
 
   // Render wanted page according to the origin variable
   if (origin === 'account') {
