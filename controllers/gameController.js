@@ -128,6 +128,8 @@ exports.getRecGames = catchAsync(async (req, res, next) => {
     totalGames = games.length;
   }
 
+  console.log(games.length);
+
   // Render wanted page according to the origin variable
   if (origin === 'account') {
     res.status(200).render('recommendedGames', {
