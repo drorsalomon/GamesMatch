@@ -272,8 +272,6 @@ exports.calcResults = catchAsync(async (req, res, next) => {
   // Populate user recommended games array
   user.recommendedGames = gamesIds;
 
-  console.log(user.recommendedGames);
-
   user.surveyFinishTime = Date.now();
 
   // Format survey answering time as min:sec and save in DB
