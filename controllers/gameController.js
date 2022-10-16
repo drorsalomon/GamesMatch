@@ -124,10 +124,9 @@ exports.getRecGames = catchAsync(async (req, res, next) => {
   // If there's no filter (platforms) use the user.recommendedGames array otherwise use the array from find()
   const totalPages = populatePagesArray(totalGamesArray);
 
+  console.log(user.recommendedGames);
+  console.log('filter is: ' + filter);
   console.log('total games length: ' + totalGamesArray.length);
-  console.log(type);
-  console.log(pageNumber);
-  console.log(resPerPage);
   console.log('games: ' + games.length);
 
   // Render wanted page according to the origin variable
