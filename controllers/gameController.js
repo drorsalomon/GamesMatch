@@ -78,6 +78,8 @@ exports.getSearchResults = catchAsync(async (req, res, next) => {
   // Get total number of pages for pagination
   const totalPages = populatePagesArray(totalGamesArray);
 
+  console.log(games.length);
+
   res.status(200).render('search', {
     title: 'search results',
     games,
@@ -103,10 +105,10 @@ exports.getGames = (req, res, next) => {
 
 // Middleware for getting the user recommended games from the user.recommendedGames array in the db
 exports.getRecGames = catchAsync(async (req, res, next) => {
-  let totalPages = 0;
-  let totalGames = 0;
-
   const user = await User.findById(req.user.id);
+
+  const totalGamesArray = await Game.find({ _id: { $in: user.recommendedGames }, platforms: { $regex: filter, $options: 'i' } });
+  const totalGames = totalGamesArray.length;
 
   const traitsArray = user.traits;
 
@@ -122,13 +124,7 @@ exports.getRecGames = catchAsync(async (req, res, next) => {
   });
 
   // If there's no filter (platforms) use the user.recommendedGames array otherwise use the array from find()
-  if (filter === '') {
-    totalPages = populatePagesArray(user.recommendedGames);
-    totalGames = user.recommendedGames.length;
-  } else {
-    totalPages = populatePagesArray(games);
-    totalGames = games.length;
-  }
+  const totalPages = populatePagesArray(totalGamesArray);
 
   console.log(games.length);
 

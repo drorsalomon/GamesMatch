@@ -260,7 +260,12 @@ if (config.Elements.filterBtn)
   config.Elements.filterBtn.forEach((el) => {
     el.addEventListener('click', async (e) => {
       e.preventDefault();
+      localStorage.setItem(config.SORT_KEY, JSON.stringify(config.DEFAULT_SORT));
+      localStorage.setItem(config.TYPE_KEY, JSON.stringify(config.DEFAULT_TYPE));
+      localStorage.setItem(config.PAGE_NUMBER_KEY, JSON.stringify(config.DEFAULT_PAGE_NUM));
+      localStorage.setItem(config.RES_PER_PAGE, JSON.stringify(config.DEFAULT_RES_PER_PAGE));
       localStorage.setItem(config.FILTER_KEY, el.dataset.filter);
+
       filterGames(
         JSON.parse(localStorage.getItem(config.ORIGIN_KEY)),
         JSON.parse(localStorage.getItem(config.QUERY_KEY)),
