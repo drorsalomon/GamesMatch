@@ -152,16 +152,16 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
   if (!user) {
     return next(new AppError("Can't find a user with this email, please try again", 404));
   }
-
+  console.log('USER: ' + user);
   // Generate random Token
   const resetToken = user.createPasswordResetToken();
   await user.save({ validateBeforeSave: false });
-
+  console.log('reset token: + ' resetToken);
   // Send it to user's email
   try {
     const resetURL = `${req.protocol}://${req.get('host')}/resetPassword/${resetToken}`;
-    await new Email(user, resetURL, process.env.PASSWORD_RESET_TOKEN_VALID_TIME).sendPasswordReset();
     console.log(resetURL);
+    await new Email(user, resetURL, process.env.PASSWORD_RESET_TOKEN_VALID_TIME).sendPasswordReset();
 
     res.status(200).json({
       status: 'success',
