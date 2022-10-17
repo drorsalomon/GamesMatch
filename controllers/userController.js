@@ -121,7 +121,7 @@ exports.calcUserStats = catchAsync(async (req, res, next) => {
     },
   ]);
 
-  utils.sortTraitIdArray(avgTraitsScoreArray);
+  utils.sortTraitIdArray(avgTraitsScoreArray.toFixed(2));
 
   avgSurveyCompTime.find((el) => el._id === 'user').avgCompTime = avgSurveyCompTime.find((el) => el._id === 'user').avgCompTime.toFixed(2);
 
