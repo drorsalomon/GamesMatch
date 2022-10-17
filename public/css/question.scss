@@ -25,13 +25,10 @@
 
 .question__content__number__container {
   background-color: $text-color-secondary;
-  padding: 1rem;
+  padding: 1.2rem;
   font-size: $h3;
-
-  border-radius: 10rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  border-radius: 20rem;
+  width: 5rem;
   margin: auto;
 }
 
