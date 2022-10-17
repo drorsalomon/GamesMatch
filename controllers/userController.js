@@ -109,6 +109,12 @@ exports.calcUserStats = catchAsync(async (req, res, next) => {
     },
   ]);
 
+  utils.sortTraitIdArray(avgTraitsScoreArray);
+
+  avgTraitsScoreArray.forEach((el) => {
+    el.avgTraitScore = el.avgTraitScore.toFixed(2);
+  });
+
   const avgSurveyCompTime = await User.aggregate([
     {
       $match: { role: 'user' },
@@ -120,8 +126,6 @@ exports.calcUserStats = catchAsync(async (req, res, next) => {
       },
     },
   ]);
-
-  utils.sortTraitIdArray(avgTraitsScoreArray.toFixed(2));
 
   avgSurveyCompTime.find((el) => el._id === 'user').avgCompTime = avgSurveyCompTime.find((el) => el._id === 'user').avgCompTime.toFixed(2);
 
