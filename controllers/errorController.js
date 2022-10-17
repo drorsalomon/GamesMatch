@@ -75,6 +75,8 @@ const sendErrorProd = (err, req, res) => {
 module.exports = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
+  console.log(err.name);
+  console.log(err);
 
   // If we are in development mode get as much info about the error
   if (process.env.NODE_ENV === 'development') {
